@@ -9,22 +9,27 @@
           </li>
         </ul>
       </nav>
-      <div class="login">
-        <span @click="goto('Login')">登陆</span>/
-        <span @click="goto('Reg')">注册</span>
-      </div>
+      <!-- <div class="login">
+        <span @click="gotoLogin">登陆</span>/
+        <span @click="gotoReg">注册</span>
+      </div>-->
     </div>
   </div>
 </template>
 <script>
 export default {
-    methods: {
-        goto(item){
-            this.$router.push({
-                name:item
-            })
-        }
+  methods: {
+    gotoLogin() {
+      this.$router.push({
+        name: "login"
+      });
     },
+    goto(item) {
+      this.$router.push({
+        name: item
+      });
+    }
+  },
   data() {
     return {
       navs: [
@@ -61,6 +66,7 @@ li {
 .header {
   width: 100%;
   background: #fff;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.17);
   .con {
     width: 1200px;
     height: 80px;
