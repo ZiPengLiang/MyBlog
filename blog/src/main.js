@@ -4,16 +4,18 @@ import router from './router'
 import axios from 'axios'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-
-Vue.use(ElementUI)
+import Highlight from './comment/js/highlight'
+Vue.use(ElementUI);
+Vue.use(Highlight)
 
 Vue.prototype.axios = axios;
 axios.defaults.headers.post["Content-Type"] = "application/json; charset=UTF-8";
 Vue.config.productionTip = false
 
+
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  render: h => h(App)
+    el: '#app',
+    router,
+    render: h => h(App)
 })

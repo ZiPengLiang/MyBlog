@@ -3,6 +3,7 @@
     <transition>
       <router-view></router-view>
     </transition>
+    <el-backtop :bottom="100"></el-backtop>
   </div>
 </template>
 
@@ -33,5 +34,21 @@ input,
 button {
   margin: 0;
   padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.con {
+  width: 1200px;
+  margin: 0 auto;
+}
+.headerTitle {
+  text-align: left;
+  font-size: 18px;
+  color: #666;
+}
+.headerTitle a {
+  font-size: 18px;
+  color: #666;
 }
 </style>
