@@ -1,8 +1,5 @@
 <template>
   <div class="article">
-    <header>
-      <blog-header active="1" />
-    </header>
     <div class="main">
       <div class="con">
         <div class="articleContenter a_main">

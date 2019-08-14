@@ -16,18 +16,18 @@ export default new Router({
             component: resolve => require(['@/components/Home'], resolve)
         },
         {
-            path: '/introduction',
-            name: 'Introduction',
-            component: resolve => require(['@/components/introduction'], resolve)
+            path: '/aboutme',
+            name: 'aboutme',
+            component: resolve => require(['@/components/aboutme'], resolve)
         },
         {
-            path: '/diary',
-            name: 'Diary',
-            component: resolve => require(['@/components/diary'], resolve)
-        }, {
             path: '/article',
             name: 'Article',
             component: resolve => require(['@/components/article'], resolve)
+        }, {
+            path: '/category/:id',
+            name: 'category',
+            component: resolve => require(['@/components/category'], resolve)
         }
     ]
 })

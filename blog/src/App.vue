@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <header>
+      <blog-header />
+    </header>
     <transition>
       <router-view></router-view>
     </transition>
@@ -9,7 +12,10 @@
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  components: {
+    blogHeader: resolve => require(["@/components/blogHeader"], resolve)
+  }
 };
 </script>
 

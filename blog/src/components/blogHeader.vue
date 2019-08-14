@@ -5,18 +5,14 @@
       <nav>
         <ul>
           <li v-for="item in navs" :key="item.name">
-            <span
-              v-if="item.index !=1"
-              :class="active == item.index?'active':''"
-              @click="goto(item.name)"
-            >{{item.title}}</span>
+            <span v-if="item.index !=1" @click="goto(item.name)">{{item.title}}</span>
             <div v-else class="shareList">
               <span>{{item.title}}</span>
               <div class="more">
                 <ul class="share">
                   <li
                     v-for="item in aboutShare"
-                    @click="goto(item.name)"
+                    @click="gotoCate(item)"
                     :key="item.name"
                   >{{item.title}}</li>
                 </ul>
@@ -41,6 +37,14 @@ export default {
       this.$router.push({
         name: item
       });
+    },
+    gotoCate(item) {
+      this.$router.push({
+        name: "category",
+        params: {
+          id: item.index
+        }
+      });
     }
   },
   data() {
@@ -64,18 +68,18 @@ export default {
         },
         {
           title: "关于我",
-          name: "Introduction",
+          name: "aboutme",
           index: 3
         }
       ],
       aboutShare: [
         {
           title: "知识总结",
-          name: "Summary"
+          index: 1
         },
         {
           title: "生活牢骚",
-          name: "Grumbles"
+          index: 2
         }
       ]
     };
