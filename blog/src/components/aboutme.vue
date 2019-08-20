@@ -11,7 +11,7 @@
           <p>是一个2019届的毕业生</p>
         </div>
         <div class="about">
-          <div class="title">about My Word</div>
+          <div class="title">about My Work</div>
           <p>2019/06 - 至今：广州康行信息有限公司</p>
           <p class="evaluate">从大学毕业就到该公司工作了，至今为止还十分满意</p>
         </div>
@@ -24,12 +24,16 @@
         </div>
       </div>
     </div>
+    <div class="contenter">
+      <valine />
+    </div>
   </div>
 </template>
 <script>
 export default {
   components: {
-    blogHeader: resolve => require(["./blogHeader"], resolve)
+    blogHeader: resolve => require(["./blogHeader"], resolve),
+    valine: resolve => require(["./valine"], resolve)
   },
   data() {
     return {};
@@ -37,13 +41,14 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.contenter {
+  margin: 0 auto;
+  max-width: 700px;
+  text-align: left;
+}
 .main {
   padding-top: 90px;
-  .contenter {
-    margin: 0 auto;
-    max-width: 700px;
-    text-align: left;
-  }
+
   p {
     margin-bottom: 16px;
     font-size: 14px;
@@ -58,7 +63,7 @@ export default {
       border-bottom: 1px solid #ccc;
       margin-bottom: 16px;
     }
-    .evaluate{
+    .evaluate {
       padding-left: 2em;
     }
   }

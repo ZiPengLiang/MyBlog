@@ -38,6 +38,7 @@
                 </code>
             </pre>
           </div>
+          <valine />
         </div>
       </div>
     </div>
@@ -46,7 +47,8 @@
 <script>
 export default {
   components: {
-    blogHeader: resolve => require(["./blogHeader"], resolve)
+    blogHeader: resolve => require(["./blogHeader"], resolve),
+    valine: resolve => require(["./valine"], resolve)
   },
   methods: {},
   data() {

@@ -6,11 +6,11 @@
         <div class="newest">
           <ul class="new">
             <li v-for="(item,index) in data" :key="index">
-              <div class="n_img" @click="gotoArticle">
+              <div class="n_img" @click="gotoArticle(item)">
                 <img src alt />
               </div>
               <div class="n_article">
-                <p class="p_title" @click="gotoArticle">{{item.title}}</p>
+                <p class="p_title" @click="gotoArticle(item)">{{item.title}}</p>
                 <p class="about">
                   <span>
                     <i class="el-icon-time"></i>
@@ -47,9 +47,12 @@
 export default {
   props: ["data", "pageSize"],
   methods: {
-    gotoArticle() {
+    gotoArticle(item) {
       this.$router.push({
-        name: "Article"
+        name: "Article",
+        query: {
+          id: item.id
+        }
       });
     },
     // 页数修改

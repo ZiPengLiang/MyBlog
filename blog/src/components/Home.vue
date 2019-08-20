@@ -22,54 +22,63 @@ export default {
           title: "vue+echarts 动态绘制图表以及异步加载数据",
           time: "2019-6-27",
           vistor: "888",
+          id: 1,
           type: "技术推荐"
         },
         {
           title: "vue+echarts 动态绘制图表以及异步加载数据",
           time: "2019-6-27",
           vistor: "888",
+          id: 2,
           type: "技术推荐"
         },
         {
           title: "vue+echarts 动态绘制图表以及异步加载数据",
           time: "2019-6-27",
           vistor: "888",
+          id: 3,
           type: "技术推荐"
         },
         {
           title: "vue+echarts 动态绘制图表以及异步加载数据",
           time: "2019-6-27",
           vistor: "888",
+          id: 4,
           type: "技术推荐"
         },
         {
           title: "vue+echarts 动态绘制图表以及异步加载数据",
           time: "2019-6-27",
           vistor: "888",
+          id: 5,
           type: "技术推荐"
         },
         {
           title: "vue+echarts 动态绘制图表以及异步加载数据",
           time: "2019-6-27",
           vistor: "888",
+          id: 6,
           type: "技术推荐"
         },
         {
           title: "vue+echarts 动态绘制图表以及异步加载数据",
           time: "2019-6-27",
           vistor: "888",
+          id: 7,
           type: "技术推荐"
         },
         {
           title: "vue+echarts 动态绘制图表以及异步加载数据",
           time: "2019-6-27",
           vistor: "888",
+          id: 8,
           type: "技术推荐"
         },
         {
           title: "vue+echarts 动态绘制图表以及异步加载数据",
           time: "2019-6-27",
           vistor: "888",
+          id: 9,
           type: "技术推荐"
         }
       ]
