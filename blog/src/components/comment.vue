@@ -1,28 +1,28 @@
 <template>
   <div class="comment">
-    <el-container>
+    <el-container v-loading="loading">
       <el-main>
         <!-- 最新发布 -->
         <div class="newest">
           <ul class="new">
-            <li v-for="(item,index) in data" :key="index">
+            <li v-for="(item,index) in blogData" :key="index">
               <div class="n_img" @click="gotoArticle(item)">
-                <img src alt />
+                <img :src="item.base64" alt />
               </div>
               <div class="n_article">
                 <p class="p_title" @click="gotoArticle(item)">{{item.title}}</p>
                 <p class="about">
                   <span>
                     <i class="el-icon-time"></i>
-                    {{item.time}}
+                    {{getTime(item.date)}}
                   </span>
                   <span>
                     <i class="el-icon-view"></i>
-                    {{item.vistor}}
+                    {{item.watch}}
                   </span>
                   <span>
                     <i class="el-icon-aim"></i>
-                    {{item.type}}
+                    {{item.classification == 'summary'?'知识总结':'生活牢骚'}}
                   </span>
                 </p>
               </div>
@@ -31,12 +31,11 @@
         </div>
         <div class="paging">
           <el-pagination
-            @size-change="handleSizeChange"
             @current-change="handleCurrentChange"
-            :current-page.sync="currentPage"
-            :page-size="pageSize*1"
+            :current-page.sync="pageno"
+            :page-size="pagesize*1"
             layout="prev, pager, next, jumper"
-            :total="100"
+            :total="count"
           ></el-pagination>
         </div>
       </el-main>
@@ -45,28 +44,73 @@
 </template>
 <script>
 export default {
-  props: ["data", "pageSize"],
+  props: ["data", "pagesize"],
+  watch: {
+    data: {
+      handler(val, oldVal) {
+        console.log("data数据发生变化 ", this.data); //但是这两个值打印出来却都是一样的
+        this.getData();
+      },
+      deep: true
+    }
+  },
   methods: {
     gotoArticle(item) {
       this.$router.push({
         name: "Article",
         query: {
-          id: item.id
+          id: item._id
         }
       });
     },
-    // 页数修改
-    handleSizeChange() {},
+
     //页码修改
     handleCurrentChange(val) {
-      console.log(`当前页: ${val}`);
-      this.currentPage = val;
+      this.pageno = val;
+      this.getData();
+    },
+    getTime(time) {
+      let date = new Date(time);
+      let year = date.getFullYear();
+      let month =
+        date.getMonth() + 1 >= 10
+          ? date.getMonth() + 1
+          : "0" + (date.getMonth() + 1);
+      let day = date.getDate() >= 10 ? date.getMonth() : "0" + date.getMonth();
+      return year + "-" + month + "-" + day;
+    },
+    getData() {
+      let that = this;
+      this.loading = true;
+      this.gl_ajax({
+        url: "/getData",
+        method: "get",
+        data: {
+          pageno: that.pageno,
+          pagesize: that.pagesize,
+          data: JSON.stringify(that.data),
+          library: "blog"
+        },
+        success(res) {
+          that.loading = false;
+          if (res.data.status == 0) {
+            that.count = res.data.count;
+            that.blogData = res.data.data;
+          }
+        }
+      });
     }
+  },
+  mounted() {
+    this.getData();
   },
   data() {
     return {
       // 当前页数
-      currentPage: 1
+      pageno: 1,
+      count: 1,
+      loading: false,
+      blogData: []
     };
   }
 };
@@ -84,11 +128,12 @@ export default {
   //最新发布
   .newest {
     margin-top: 15px;
+    // min-height: 90%;
     ul {
       // height: 1280px;
       width: 100%;
       display: flex;
-      justify-content: center;
+      // justify-content: center;
       align-content: center;
       flex-wrap: wrap;
       li {

@@ -28,6 +28,10 @@ export default new Router({
             path: '/category/:id',
             name: 'category',
             component: resolve => require(['@/components/category'], resolve)
+        }, {
+            path: '/links',
+            name: 'Links',
+            component: resolve => require(['@/components/links'], resolve)
         }
     ]
 })

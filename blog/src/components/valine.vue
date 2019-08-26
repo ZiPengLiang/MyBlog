@@ -24,7 +24,7 @@ export default {
   },
   mounted: function() {
     // require window
-    console.log(this.$route);
+    // console.log(this.$route);
     let valinePath = this.$route.query.id
       ? window.location.pathname + this.$route.query.id
       : window.location.pathname;

@@ -94,9 +94,9 @@ li {
 .header {
   width: 100%;
   background: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
   z-index: 999;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.17);
   .con {

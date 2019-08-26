@@ -1,43 +1,30 @@
 <template>
-  <div class="article">
+  <div class="article" v-loading="loading">
     <div class="main">
       <div class="con">
         <div class="articleContenter a_main">
           <div class="a_header">
-            <p class="title">JavaScript 相关的工具代码</p>
+            <p class="title">{{card.title}}</p>
             <p class="about">
               <span>
                 <i class="el-icon-time"></i>
-                2019-6-27
+                {{getTime(card.date)}}
               </span>
               <span>
                 <i class="el-icon-view"></i>
-                888
+                {{card.watch}}
               </span>
               <span>
                 <i class="el-icon-aim"></i>
-                技术推荐
+                {{card.classification == 'summary'?'知识总结':'生活牢骚'}}
               </span>
             </p>
             <div class="type">
-              <span class="t_button">JavaScript</span>
-              <span class="t_button">JavaScript</span>
-              <span class="t_button">JavaScript</span>
-              <span class="t_button">JavaScript</span>
+              <span class="t_button" v-for="(item,index) in card.blogType" :key="index">{{item}}</span>
             </div>
           </div>
-          <div class="a_preface">不知道写些什么</div>
-          <div class="a_card" v-for="(item,index) in card" :key="index">
-            <h4 class="a_c_title">{{item.title}}</h4>
-            <ul v-if="item.tips">
-              <li v-for="(l,i) in item.tips" :key="i">{{l.content}}</li>
-            </ul>
-            <pre v-highlightB>
-                <code class="html">
-                    {{item.code}}
-                </code>
-            </pre>
-          </div>
+          <!-- <div class="a_preface">不知道写些什么</div> -->
+          <div class="a_card" v-html="card.render"></div>
           <valine />
         </div>
       </div>
@@ -47,117 +34,48 @@
 <script>
 export default {
   components: {
-    blogHeader: resolve => require(["./blogHeader"], resolve),
     valine: resolve => require(["./valine"], resolve)
   },
-  methods: {},
+  methods: {
+    getTime(time) {
+      let date = new Date(time);
+      let year = date.getFullYear();
+      let month =
+        date.getMonth() + 1 >= 10
+          ? date.getMonth() + 1
+          : "0" + (date.getMonth() + 1);
+      let day = date.getDate() >= 10 ? date.getMonth() : "0" + date.getMonth();
+      return year + "-" + month + "-" + day;
+    },
+    getData() {
+      let that = this;
+      this.loading = true;
+      this.gl_ajax({
+        url: "/getByID",
+        method: "get",
+        data: {
+          library: "blog",
+          _id: this.$route.query.id
+        },
+        success(res) {
+          that.loading = false;
+          if (res.data.status == 0) {
+            that.card = res.data.data[0];
+          }
+        }
+      });
+    }
+  },
   data() {
     return {
       time: "",
-      card: [
-        {
-          title: "js原理1",
-          tips: [
-            {
-              content: "6666"
-            },
-            {
-              content: "6666"
-            },
-            {
-              content: "6666"
-            }
-          ],
-          code: `
-            <div class="n_article">
-                <p class="p_title" @click="gotoArticle">vue+echarts 动态绘制图表以及异步加载数据</p>
-                <p class="about">
-                    <span>
-                        <i class="el-icon-time"></i>
-                        2019-6-27
-                    </span>
-                    <span>
-                        <i class="el-icon-view"></i>
-                        888
-                    </span>
-                    <span>
-                        <i class="el-icon-aim"></i>
-                        技术推荐
-                    </span>
-                </p>
-            </div> 
-      `
-        },
-        {
-          title: "js原理2",
-          tips: [
-            {
-              content: "6666"
-            },
-            {
-              content: "6666"
-            },
-            {
-              content: "6666"
-            }
-          ],
-          code: `
-            <div class="n_article">
-                <p class="p_title" @click="gotoArticle">vue+echarts 动态绘制图表以及异步加载数据</p>
-                <p class="about">
-                    <span>
-                        <i class="el-icon-time"></i>
-                        2019-6-27
-                    </span>
-                    <span>
-                        <i class="el-icon-view"></i>
-                        888
-                    </span>
-                    <span>
-                        <i class="el-icon-aim"></i>
-                        技术推荐
-                    </span>
-                </p>
-            </div> 
-      `
-        },
-        {
-          title: "js原理3",
-          tips: [
-            {
-              content: "6666"
-            },
-            {
-              content: "6666"
-            },
-            {
-              content: "6666"
-            }
-          ],
-          code: `
-            <div class="n_article">
-                <p class="p_title" @click="gotoArticle">vue+echarts 动态绘制图表以及异步加载数据</p>
-                <p class="about">
-                    <span>
-                        <i class="el-icon-time"></i>
-                        2019-6-27
-                    </span>
-                    <span>
-                        <i class="el-icon-view"></i>
-                        888
-                    </span>
-                    <span>
-                        <i class="el-icon-aim"></i>
-                        技术推荐
-                    </span>
-                </p>
-            </div> 
-      `
-        }
-      ]
+      card: {},
+      loading: false
     };
   },
-  mounted() {}
+  mounted() {
+    this.getData();
+  }
 };
 </script>
 <style lang="scss" scoped>

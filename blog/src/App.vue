@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header>
+    <header class="appHeader">
       <blog-header />
     </header>
     <transition>
@@ -25,7 +25,9 @@ html,
 #app {
   padding: 0;
   margin: 0;
-  height: 100%;
+  /* height: 100%; */
+  min-height: 100vh;
+  width: 100%;
   text-align: center;
 }
 div,
@@ -56,5 +58,13 @@ a {
 .headerTitle a {
   font-size: 18px;
   color: #666;
+}
+.appHeader {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 </style>

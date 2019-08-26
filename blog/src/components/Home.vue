@@ -3,7 +3,7 @@
     <div class="main">
       <div class="con">
         <!-- 数据栏 -->
-        <comment :data="comData" pageSize="12" />
+        <comment :data="comData" pagesize="12" />
       </div>
     </div>
   </div>
@@ -17,71 +17,7 @@ export default {
   methods: {},
   data() {
     return {
-      comData: [
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          id: 1,
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          id: 2,
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          id: 3,
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          id: 4,
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          id: 5,
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          id: 6,
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          id: 7,
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          id: 8,
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          id: 9,
-          type: "技术推荐"
-        }
-      ]
+      comData: {}
     };
   }
 };
@@ -96,6 +32,7 @@ p {
 }
 
 .myBlog {
+  height: 100%;
   background: #fff;
   header {
     width: 100%;
@@ -104,7 +41,8 @@ p {
     z-index: 100;
   }
   .main {
-    margin-top: 85px;
+    // margin-top: 85px;
+    padding-top: 85px;
   }
 }
 </style>

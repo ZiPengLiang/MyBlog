@@ -4,8 +4,8 @@
       <div class="c_header">
         <h1>{{active.title}}</h1>
       </div>
-      <div class="con" >
-        <comment :data="comData" pageSize="9" />
+      <div class="con">
+        <comment :data="comData" pagesize="9" />
       </div>
     </div>
   </div>
@@ -24,6 +24,7 @@ export default {
           return item;
         }
       })[0];
+      this.comData.classification = this.active.name;
     }
   },
   beforeRouteEnter(to, from, next) {
@@ -40,71 +41,18 @@ export default {
       // 当前分类
       active: {},
       //列表信息
-      comData: [
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          type: "技术推荐"
-        },
-        {
-          title: "vue+echarts 动态绘制图表以及异步加载数据",
-          time: "2019-6-27",
-          vistor: "888",
-          type: "技术推荐"
-        }
-      ],
+      comData: {
+        classification: ""
+      },
       aboutShare: [
         {
           title: "知识总结",
-          name: "Knowledge",
+          name: "summary",
           index: 1
         },
         {
           title: "生活牢骚",
-          name: "life",
+          name: "whining",
           index: 2
         }
       ]
@@ -113,8 +61,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.category {
+  height: 100%;
+}
 .main {
-  margin-top: 85px;
+  padding-top: 85px;
   .c_header {
     padding: 15px 0;
   }

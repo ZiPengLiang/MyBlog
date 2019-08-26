@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import vuex from 'vuex'
 Vue.use(vuex);
-
-export default new vuex({
+let store = new vuex.Store({
     state: {
 
     },
-    mutations: {}
+    mutations: {
+
+    }
 })
+
+export default store;
