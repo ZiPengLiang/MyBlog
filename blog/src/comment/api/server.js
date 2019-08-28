@@ -1,6 +1,7 @@
 let base = "http://101.132.180.67:3020"
+    // let base = 'http://localhost:3011'
 import axios from "axios";
-export const gl_ajax = requestData => {
+const gl_ajax = requestData => {
     !requestData.catchStatus ? requestData.catchStatus = [] : "";
     requestData.senderr === undefined ? requestData.senderr = true : ""
     return axios({
@@ -21,3 +22,4 @@ export const gl_ajax = requestData => {
             console.log(err)
         });
 };
+export { gl_ajax, base }

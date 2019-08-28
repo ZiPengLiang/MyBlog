@@ -47,7 +47,7 @@ a {
   text-decoration: none;
 }
 .con {
-  width: 1200px;
+  width: 1080px;
   margin: 0 auto;
 }
 .headerTitle {

@@ -100,7 +100,7 @@ li {
   z-index: 999;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.17);
   .con {
-    width: 1200px;
+    width: 1280px;
     height: 80px;
     margin: 0 auto;
     line-height: 80px;

@@ -7,7 +7,7 @@
           <ul class="new">
             <li v-for="(item,index) in blogData" :key="index">
               <div class="n_img" @click="gotoArticle(item)">
-                <img :src="item.base64" alt />
+                <img :src="base+'/'+item.base64" alt />
               </div>
               <div class="n_article">
                 <p class="p_title" @click="gotoArticle(item)">{{item.title}}</p>
@@ -43,6 +43,7 @@
   </div>
 </template>
 <script>
+import { base } from "../comment/api/server";
 export default {
   props: ["data", "pagesize"],
   watch: {
@@ -56,10 +57,28 @@ export default {
   },
   methods: {
     gotoArticle(item) {
-      this.$router.push({
-        name: "Article",
-        query: {
-          id: item._id
+      let that = this;
+      this.gl_ajax({
+        method: "post",
+        url: "/updata",
+        data: JSON.stringify({
+          library: "blog",
+          _id: item._id,
+          data: {
+            watch: item.watch + 1
+          }
+        }),
+        success: function(res) {
+          console.log(res);
+          that.$router.push({
+            name: "Article",
+            query: {
+              id: item._id
+            }
+          });
+        },
+        error: function(err) {
+          console.log("err", err);
         }
       });
     },
@@ -76,7 +95,7 @@ export default {
         date.getMonth() + 1 >= 10
           ? date.getMonth() + 1
           : "0" + (date.getMonth() + 1);
-      let day = date.getDate() >= 10 ? date.getMonth() : "0" + date.getMonth();
+      let day = date.getDate() >= 10 ? date.getDate() : "0" + date.getDate();
       return year + "-" + month + "-" + day;
     },
     getData() {
@@ -102,6 +121,8 @@ export default {
     }
   },
   mounted() {
+    // console.log("base", base);
+    this.base = base;
     this.getData();
   },
   data() {
@@ -110,7 +131,8 @@ export default {
       pageno: 1,
       count: 1,
       loading: false,
-      blogData: []
+      blogData: [],
+      base: ""
     };
   }
 };
