@@ -7,6 +7,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import Highlight from './comment/js/highlight'
 import { gl_ajax } from './comment/api/server'
 import store from './store/index.js'
+// import './comment/js/mountclick.js'
 Vue.use(ElementUI);
 Vue.use(Highlight)
 

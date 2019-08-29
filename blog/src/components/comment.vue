@@ -1,7 +1,7 @@
 <template>
   <div class="comment">
     <el-container v-loading="loading">
-      <el-main>
+      <el-main v-if="blogData">
         <!-- 最新发布 -->
         <div class="newest">
           <ul class="new">
@@ -37,6 +37,11 @@
             layout="prev, pager, next, jumper"
             :total="count"
           ></el-pagination>
+        </div>
+      </el-main>
+      <el-main v-else>
+        <div class="noData">
+          <p>Sorry,暂无数据</p>
         </div>
       </el-main>
     </el-container>
@@ -115,6 +120,8 @@ export default {
           if (res.data.status == 0) {
             that.count = res.data.count;
             that.blogData = res.data.data;
+          } else {
+            that.blogData = null;
           }
         }
       });
@@ -222,6 +229,15 @@ export default {
     padding: 11px 15px 14px;
     border-bottom: 1px solid #ccc;
     background: #fbfbfb;
+  }
+  .noData {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #515a6e;
   }
 }
 </style>

@@ -1,49 +1,53 @@
 <template>
   <div class="links">
-    <div class="con">
+    <div>
       <div class="main">
-        <div class="c_header">
-          <h1>友情链接</h1>
-        </div>
-        <div class="con" v-loading="loading">
-          <div class="card">
-            <h4>友情链接</h4>
-            <div class="fLink">
-              <div class="lCard" v-for="(item,index) in fLink" :key="index">
-                <div class="b_iomg">
-                  <img
-                    :src="item.imgurl?item.imgurl:'https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=ee323c6c71cf3bc7e855c5eae1309699/3801213fb80e7becdddcc3802e2eb9389b506b49.jpg'"
-                    alt
-                  />
-                  <div class="blog_title">{{item.evaluate}}</div>
-                </div>
-                <div class="link">
-                  <a :href="item.url" target="view_window">{{item.blogname}}</a>
+        <header>
+          <div class="c_header">
+            <h1 class="fLinkHeader">友情链接</h1>
+          </div>
+        </header>
+        <div class="con">
+          <div v-loading="loading">
+            <div class="card">
+              <h4>友情链接</h4>
+              <div class="fLink">
+                <div class="lCard" v-for="(item,index) in fLink" :key="index">
+                  <div class="b_iomg">
+                    <img
+                      :src="item.imgurl?item.imgurl:'https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=ee323c6c71cf3bc7e855c5eae1309699/3801213fb80e7becdddcc3802e2eb9389b506b49.jpg'"
+                      alt
+                    />
+                    <div class="blog_title">{{item.evaluate}}</div>
+                  </div>
+                  <div class="link">
+                    <a :href="item.url" target="view_window">{{item.blogname}}</a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="card" style="margin-top:50px">
-            <h4>我的项目</h4>
-            <div class="fLink">
-              <div class="lCard" v-for="(item,index) in mLink" :key="index">
-                <div class="b_iomg">
-                  <img
-                    :src="item.imgurl?item.imgurl:'https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=ee323c6c71cf3bc7e855c5eae1309699/3801213fb80e7becdddcc3802e2eb9389b506b49.jpg'"
-                    alt
-                  />
-                  <div class="blog_title">{{item.evaluate}}</div>
-                </div>
+            <div class="card" style="margin-top:50px">
+              <h4>我的项目</h4>
+              <div class="fLink">
+                <div class="lCard" v-for="(item,index) in mLink" :key="index">
+                  <div class="b_iomg">
+                    <img
+                      :src="item.imgurl?item.imgurl:'https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=ee323c6c71cf3bc7e855c5eae1309699/3801213fb80e7becdddcc3802e2eb9389b506b49.jpg'"
+                      alt
+                    />
+                    <div class="blog_title">{{item.evaluate}}</div>
+                  </div>
 
-                <div class="link">
-                  <a :href="item.url" target="view_window">{{item.blogname}}</a>
+                  <div class="link">
+                    <a :href="item.url" target="view_window">{{item.blogname}}</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <valine />
         </div>
       </div>
-      <valine />
     </div>
   </div>
 </template>
@@ -108,6 +112,10 @@ a {
   color: #000;
   margin-right: 5px;
 }
+header {
+  width: 100%;
+  height: 260px;
+}
 .con {
   // width: 800px;
 }
@@ -115,7 +123,37 @@ a {
   padding-top: 85px;
   margin-bottom: 100px;
   .c_header {
-    padding: 15px 0;
+    // padding: 15px 0;
+    // background: rgba(12, 12, 12, 0.9);
+    background: url(http://infolee.001666.cn/zb_users/theme/infolee/include/cateimg/2.jpg)
+      no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    height: 260px;
+    position: relative;
+    .fLinkHeader {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+
+      // left: 50%;
+      transform: translateY(-50%);
+      margin: 0;
+      z-index: 99;
+    }
+  }
+  .c_header::after {
+    background: #171717;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    overflow: hidden;
+    display: block;
   }
   .card {
     // text-align: left;

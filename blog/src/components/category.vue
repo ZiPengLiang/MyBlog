@@ -2,7 +2,7 @@
   <div class="category">
     <div class="main">
       <div class="c_header">
-        <h1>{{active.title}}</h1>
+        <h1 class="fLinkHeader">{{active.title}}</h1>
       </div>
       <div class="con">
         <comment :data="comData" pagesize="9" />
@@ -67,7 +67,35 @@ export default {
 .main {
   padding-top: 85px;
   .c_header {
-    padding: 15px 0;
+    background: url(http://infolee.001666.cn/zb_users/theme/infolee/include/cateimg/2.jpg)
+      no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    height: 260px;
+    position: relative;
+    .fLinkHeader {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+
+      // left: 50%;
+      transform: translateY(-50%);
+      margin: 0;
+      z-index: 99;
+    }
+  }
+  .c_header::after {
+    background: #171717;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    overflow: hidden;
+    display: block;
   }
 }
 </style>

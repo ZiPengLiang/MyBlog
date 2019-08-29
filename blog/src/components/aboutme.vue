@@ -1,8 +1,8 @@
 <template>
   <div class="Introduction">
     <div class="main">
-      <div class="i_title">
-        <h1>关于我</h1>
+      <div class="c_header">
+        <h1 class="fLinkHeader">关于我</h1>
       </div>
       <div class="contenter">
         <div class="about">
@@ -47,7 +47,7 @@ export default {
   text-align: left;
 }
 .main {
-  padding-top: 90px;
+  padding-top: 85px;
 
   p {
     margin-bottom: 16px;
@@ -67,5 +67,38 @@ export default {
       padding-left: 2em;
     }
   }
+}
+.c_header {
+  // padding: 15px 0;
+  // background: rgba(12, 12, 12, 0.9);
+  background: url(http://infolee.001666.cn/zb_users/theme/infolee/include/cateimg/2.jpg)
+    no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  height: 260px;
+  position: relative;
+  .fLinkHeader {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+
+    // left: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    z-index: 99;
+  }
+}
+.c_header::after {
+  background: #171717;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: " ";
+  overflow: hidden;
+  display: block;
 }
 </style>

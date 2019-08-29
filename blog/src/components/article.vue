@@ -24,7 +24,7 @@
             </div>
           </div>
           <!-- <div class="a_preface">不知道写些什么</div> -->
-          <div class="a_card" v-html="card.render"></div>
+          <div class="a_card markdown-body" v-html="card.render"></div>
           <valine />
         </div>
       </div>
@@ -203,5 +203,15 @@ h5::before {
       }
     }
   }
+}
+.a_card {
+  margin: 26px 0;
+}
+.a_card /deep/ img {
+  box-sizing: content-box;
+  background-color: #fff;
+  margin: 30px auto;
+  display: block;
+  box-shadow: 0 0 2.6875rem rgba(0, 0, 0, 0.15);
 }
 </style>
