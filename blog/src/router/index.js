@@ -32,6 +32,7 @@ export default new Router({
             path: '/links',
             name: 'Links',
             component: resolve => require(['@/components/links'], resolve)
-        }
+        },
+        { path: '*', component: resolve => require(['@/components/NotFoundComponent'], resolve) }
     ]
 })

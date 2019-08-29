@@ -44,6 +44,15 @@
                 </div>
               </div>
             </div>
+            <div class="card" style="margin:50px 0;">
+              <h4>关于本站</h4>
+              <div class="mlink">
+                <P>博客名：ZPeng</P>
+                <P>博客地址：</P>
+                <P>博客描述：我是练习时长2年半的菜鸟程序员</P>
+                <P>博客头像：https://cn.gravatar.com/userimage/168508114/c665cf6c692c6bde01f4e6e61fc4f8ec.png?size=200</P>
+              </div>
+            </div>
           </div>
           <valine />
         </div>
@@ -183,6 +192,8 @@ header {
         }
         .blog_title {
           color: #fff;
+          box-sizing: border-box;
+          padding: 0 30px;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -200,6 +211,7 @@ header {
       .b_iomg:hover {
         .blog_title {
           height: 100%;
+          padding: 30px;
         }
       }
       .link {
@@ -219,6 +231,15 @@ header {
         color: #eb5055;
       }
     }
+  }
+}
+.mlink {
+  width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  p {
+    font-size: 16px;
+    margin: 10px 0;
   }
 }
 </style>
