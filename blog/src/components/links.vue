@@ -130,7 +130,7 @@ header {
 }
 .main {
   padding-top: 85px;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
   .c_header {
     // padding: 15px 0;
     // background: rgba(12, 12, 12, 0.9);

@@ -6,6 +6,7 @@
     <transition>
       <router-view></router-view>
     </transition>
+    <foot class="blogFooter" />
     <el-backtop :bottom="100"></el-backtop>
   </div>
 </template>
@@ -14,7 +15,8 @@
 export default {
   name: "App",
   components: {
-    blogHeader: resolve => require(["@/components/blogHeader"], resolve)
+    blogHeader: resolve => require(["@/components/blogHeader"], resolve),
+    foot: resolve => require(["@/components/footer"], resolve)
   }
 };
 </script>
@@ -66,5 +68,12 @@ a {
   top: 0;
   left: 0;
   z-index: 999;
+}
+#app {
+  position: relative;
+}
+.blogFooter {
+  position: absolute;
+  bottom: 0;
 }
 </style>

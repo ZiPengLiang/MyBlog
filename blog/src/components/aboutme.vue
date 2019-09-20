@@ -41,6 +41,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.Introduction{
+  padding-bottom: 100px;
+}
 .contenter {
   margin: 0 auto;
   max-width: 700px;
