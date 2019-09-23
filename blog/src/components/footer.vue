@@ -1,7 +1,16 @@
 <template >
   <div class="footer">
-    <!-- <a href='http://www.beian.gov.cn/portal/registerSystemInfo'>粤ICP备19112336号</a> -->
-    <div style="width:300px;margin:0 auto; padding:20px 0;">
+    <div>
+      <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">
+        <a
+          target="_blank"
+          style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"
+          href="http://www.beian.miit.gov.cn/"
+        >粤ICP备19112336号</a>
+      </p>
+    </div>
+    <span class="line">|</span>
+    <div style>
       <a
         target="_blank"
         href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44060602001398"
@@ -26,5 +35,14 @@ export default {};
   margin: 0 auto;
   line-height: 120px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 20px;
+  color: #939393;
+}
+.line {
+  color: #939393;
+  margin: 0 20px;
 }
 </style>
