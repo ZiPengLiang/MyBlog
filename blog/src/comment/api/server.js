@@ -1,5 +1,5 @@
 let base = "http://101.132.180.67:3020"
-    // let base = 'http://localhost:3011'
+    // let base = 'http://localhost:3020'
 import axios from "axios";
 const gl_ajax = requestData => {
     !requestData.catchStatus ? requestData.catchStatus = [] : "";

@@ -93,6 +93,7 @@ export default {
       this.pageno = val;
       this.getData();
     },
+    
     getTime(time) {
       let date = new Date(time);
       let year = date.getFullYear();

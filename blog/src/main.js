@@ -1,14 +1,31 @@
+import 'babel-polyfill'
 import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import {
+    Carousel,
+    CarouselItem,
+    Container,
+    Main,
+    Pagination,
+    Backtop,
+    Loading,
+    Icon,
+} from 'element-ui'
+// import 'element-ui/lib/theme-chalk/index.css'
 import Highlight from './comment/js/highlight'
 import { gl_ajax } from './comment/api/server'
 import store from './store/index.js'
 // import './comment/js/mountclick.js'
-Vue.use(ElementUI);
+Vue.component(Carousel.name, Carousel)
+Vue.component(CarouselItem.name, CarouselItem)
+Vue.component(Container.name, Container)
+Vue.component(Main.name, Main)
+Vue.component(Pagination.name, Pagination)
+Vue.component(Backtop.name, Backtop)
+Vue.component(Icon.name, Icon)
+Vue.use(Loading.directive);
 Vue.use(Highlight)
 
 Vue.prototype.axios = axios;
