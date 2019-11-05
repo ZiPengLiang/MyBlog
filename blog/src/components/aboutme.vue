@@ -29,6 +29,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   components: {
@@ -41,7 +42,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.Introduction{
+.Introduction {
   padding-bottom: 100px;
 }
 .contenter {

@@ -1,5 +1,6 @@
-import Vue from 'vue';
-import Hljs from 'highlight.js';
+// import Vue from 'vue';
+// import Hljs from 'highlight.js';
+const Hljs = require('highlight.js')
 import 'highlight.js/styles/monokai-sublime.css';
 
 let Highlight = {};

@@ -1,8 +1,8 @@
 import 'babel-polyfill'
-import Vue from 'vue'
+// import Vue from 'vue'
 import App from './App'
 import router from './router'
-import axios from 'axios'
+// import axios from 'axios'
 import {
     Carousel,
     CarouselItem,

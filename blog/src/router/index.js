@@ -1,5 +1,6 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+// import Vue from 'vue'
+// import Router from 'vue-router'
+let Router = require('vue-router')
 
 Vue.use(Router)
 

@@ -208,10 +208,23 @@ h5::before {
   margin: 26px 0;
 }
 .a_card /deep/ img {
+  max-width: 800px;
   box-sizing: content-box;
   background-color: #fff;
   margin: 30px auto;
   display: block;
   box-shadow: 0 0 2.6875rem rgba(0, 0, 0, 0.15);
+}
+.a_card /deep/ blockquote {
+  // font: 14px/22px normal helvetica, sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  // margin-left: 50px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-left: 3px solid #ccc;
+  background-color: #f1f1f1;
 }
 </style>
