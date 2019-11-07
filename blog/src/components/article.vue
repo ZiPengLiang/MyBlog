@@ -137,7 +137,7 @@ h5::before {
         line-height: 1.8;
       }
       .about {
-        font-size: 12px;
+        font-size: 14px;
         font-size: #999;
         margin-top: 12px;
         span {
@@ -206,25 +206,62 @@ h5::before {
 }
 .a_card {
   margin: 26px 0;
+  font-size: 14px !important;
 }
 .a_card /deep/ img {
-  max-width: 800px;
+  max-width: 100%;
   box-sizing: content-box;
   background-color: #fff;
   margin: 30px auto;
   display: block;
   box-shadow: 0 0 2.6875rem rgba(0, 0, 0, 0.15);
 }
+.a_card /deep/ p {
+  margin-bottom: 16px;
+}
 .a_card /deep/ blockquote {
   // font: 14px/22px normal helvetica, sans-serif;
+  font-size: 14px;
+  width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
-  // margin-left: 50px;
+  margin-left: 0;
   padding-left: 15px;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-right: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   border-left: 3px solid #ccc;
   background-color: #f1f1f1;
+}
+.a_card /deep/ blockquote p {
+  margin: 0;
+}
+.a_card /deep/ h3 {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eaecef;
+  position: relative;
+}
+.a_card /deep/ h3::before {
+  // content: "#";
+  color: #eb5055;
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: -15px;
+}
+.a_card /deep/ pre {
+  padding: 0 !important;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  border-radius: 8px !important;
+  margin-bottom: 16px;
+  margin-top: 0px;
+}
+.a_card /deep/ .hljs {
+  font-size: 16px;
+  padding: 0.9em !important;
 }
 </style>

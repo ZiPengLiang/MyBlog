@@ -48,9 +48,12 @@
               <h4>关于本站</h4>
               <div class="mlink">
                 <P>博客名：ZPeng</P>
-                <P>博客地址：</P>
+                <P>
+                  博客地址：
+                  <a href="http://www.mirenol.com">www.mirenol.com</a>
+                </P>
                 <P>博客描述：我是练习时长2年半的菜鸟程序员</P>
-                <P>博客头像：https://cn.gravatar.com/userimage/168508114/c665cf6c692c6bde01f4e6e61fc4f8ec.png?size=200</P>
+                <P>博客头像：http://mirenol.com/lzp.png</P>
               </div>
             </div>
           </div>
