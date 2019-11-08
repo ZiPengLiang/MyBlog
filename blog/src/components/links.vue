@@ -26,7 +26,7 @@
                 </div>
               </div>
             </div>
-            <div class="card" style="margin-top:50px">
+            <div class="card" style="margin-top:50px" >
               <h4>我的项目</h4>
               <div class="fLink">
                 <div class="lCard" v-for="(item,index) in mLink" :key="index">
@@ -54,6 +54,7 @@
                 </P>
                 <P>博客描述：我是练习时长2年半的菜鸟程序员</P>
                 <P>博客头像：http://mirenol.com/lzp.png</P>
+                <p>建站时间：2019-10-07</p>
               </div>
             </div>
           </div>
@@ -135,8 +136,6 @@ header {
   padding-top: 85px;
   padding-bottom: 100px;
   .c_header {
-    // padding: 15px 0;
-    // background: rgba(12, 12, 12, 0.9);
     background: url(http://infolee.001666.cn/zb_users/theme/infolee/include/cateimg/2.jpg)
       no-repeat;
     background-size: cover;

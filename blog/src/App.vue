@@ -32,6 +32,13 @@ html,
   width: 100%;
   text-align: center;
 }
+* {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+*::-webkit-scrollbar {
+  width: 0 !important;
+}
 div,
 p,
 span,
@@ -71,9 +78,5 @@ a {
 }
 #app {
   position: relative;
-}
-.blogFooter {
-  position: absolute;
-  bottom: 0;
 }
 </style>

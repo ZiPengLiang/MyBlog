@@ -2,6 +2,7 @@
   <div class="header">
     <div class="con">
       <div class="name">ZPengBlog</div>
+      <!-- <router-link to="/home" class="name">ZPengBlog</router-link> -->
       <nav>
         <ul>
           <li v-for="item in navs" :key="item.name">
@@ -28,11 +29,6 @@
 export default {
   props: ["active"],
   methods: {
-    gotoLogin() {
-      this.$router.push({
-        name: "login"
-      });
-    },
     goto(item) {
       this.$router.push({
         name: item

@@ -15,6 +15,7 @@ import {
 } from 'element-ui'
 // import 'element-ui/lib/theme-chalk/index.css'
 import Highlight from './comment/js/highlight'
+// import mountclick from './comment/js/mountclick'
 import { gl_ajax } from './comment/api/server'
 import store from './store/index.js'
 // import './comment/js/mountclick.js'
@@ -27,7 +28,7 @@ Vue.component(Backtop.name, Backtop)
 Vue.component(Icon.name, Icon)
 Vue.use(Loading.directive);
 Vue.use(Highlight)
-
+    // Vue.use(mountclick)
 Vue.prototype.axios = axios;
 Vue.prototype.gl_ajax = gl_ajax;
 axios.defaults.headers.post["Content-Type"] = "application/json; charset=UTF-8";

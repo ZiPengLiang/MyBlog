@@ -23,7 +23,6 @@
               <span class="t_button" v-for="(item,index) in card.blogType" :key="index">{{item}}</span>
             </div>
           </div>
-          <!-- <div class="a_preface">不知道写些什么</div> -->
           <div class="a_card markdown-body" v-html="card.render"></div>
           <valine />
         </div>
@@ -215,6 +214,7 @@ h5::before {
   margin: 30px auto;
   display: block;
   box-shadow: 0 0 2.6875rem rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
 }
 .a_card /deep/ p {
   margin-bottom: 16px;
@@ -232,9 +232,12 @@ h5::before {
   padding-bottom: 15px;
   border-left: 3px solid #ccc;
   background-color: #f1f1f1;
+  
 }
 .a_card /deep/ blockquote p {
   margin: 0;
+   font-size: 14px;
+  line-height: 24px;
 }
 .a_card /deep/ h3 {
   padding-bottom: 8px;
