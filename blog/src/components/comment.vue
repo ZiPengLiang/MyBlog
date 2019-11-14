@@ -7,7 +7,7 @@
           <ul class="new">
             <li v-for="(item,index) in blogData" :key="index">
               <div class="n_img" @click="gotoArticle(item)">
-                <img :src="base+'/'+item.base64" alt />
+                <img v-lazy="base+'/'+item.base64" alt />
               </div>
               <div class="n_article">
                 <p class="p_title" @click="gotoArticle(item)">{{item.title}}</p>

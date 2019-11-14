@@ -25,16 +25,14 @@
     </div>
     <div class="con MobileBox">
       <div class="mobileTitle">ZPengBlog</div>
-      <div class="mobileMenus">
-        <i class="el-icon-menu"></i>
-        <div class='selectBox'></div>
-      </div>
+      <div class="mobileMenus"></div>
     </div>
   </div>
 </template>
 <script>
 export default {
   props: ["active"],
+
   methods: {
     goto(item) {
       this.$router.push({
@@ -97,6 +95,7 @@ li {
 .header {
   width: 100%;
   background: #fff;
+  // color: transparent;
   // position: fixed;
   // top: 0;
   // left: 0;
@@ -111,6 +110,7 @@ li {
     .name {
       float: left;
       font-size: 20px;
+      padding-left: 20px;
     }
     .name:hover {
       cursor: pointer;
@@ -190,14 +190,13 @@ li {
       font-size: 20px;
       font-weight: 600;
     }
-    .mobileMenus{
+    .mobileMenus {
       position: absolute;
       width: 20px;
       // height: 20px;
       top: 0;
       left: 20px;
-      .selectBox{
-
+      .selectBox {
       }
     }
   }

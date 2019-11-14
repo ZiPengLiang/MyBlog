@@ -7,7 +7,7 @@
             <h1 class="fLinkHeader">友情链接</h1>
           </div>
         </header>
-        <div class="con">
+        <div class="con linkBox">
           <div v-loading="loading">
             <div class="card">
               <h4>友情链接</h4>
@@ -129,8 +129,9 @@ header {
   width: 100%;
   height: 260px;
 }
-.con {
-  // width: 800px;
+.linkBox{
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 .main {
   padding-top: 85px;

@@ -8,6 +8,7 @@
     </transition>
     <foot class="blogFooter" />
     <el-backtop :bottom="100"></el-backtop>
+    <quick class="quick" />
   </div>
 </template>
 
@@ -16,7 +17,11 @@ export default {
   name: "App",
   components: {
     blogHeader: resolve => require(["@/components/blogHeader"], resolve),
-    foot: resolve => require(["@/components/footer"], resolve)
+    foot: resolve => require(["@/components/footer"], resolve),
+    quick: resolve => require(["@/components/quick"], resolve)
+  },
+  data() {
+    return {};
   }
 };
 </script>
@@ -79,5 +84,13 @@ a {
 }
 #app {
   position: relative;
+}
+.quick {
+  display: none;
+}
+@media (max-width: 600px) {
+  .quick {
+    display: block;
+  }
 }
 </style>

@@ -40,17 +40,23 @@ export default {
       el: "#vcomments",
       appId: "J2VgKE5qGV4ehUOdO4e4oyGK-gzGzoHsz", // your appId
       appKey: "e6p04zvWNl7aDyFvLMK6Ulxk", // your appKey
-      notify: false,
+      notify: true,
       verify: true,
       //   path: window.location.pathname,
       path: valinePath,
       visitor: false,
       avatar: "mp",
-      lang: "en",
+      avatarForce:true,
+      lang: "zh-cn",
       placeholder: "write here"
     });
   }
 };
 </script>
 <style lang="scss" scoped>
+#vcomments {
+  /deep/ .vsys {
+    display: none;
+  }
+}
 </style>

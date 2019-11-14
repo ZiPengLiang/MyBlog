@@ -28,7 +28,7 @@ Vue.component(Backtop.name, Backtop)
 Vue.component(Icon.name, Icon)
 Vue.use(Loading.directive);
 Vue.use(Highlight)
-    // Vue.use(mountclick)
+Vue.use(VueLazyload)
 Vue.prototype.axios = axios;
 Vue.prototype.gl_ajax = gl_ajax;
 axios.defaults.headers.post["Content-Type"] = "application/json; charset=UTF-8";

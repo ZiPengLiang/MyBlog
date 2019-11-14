@@ -44,11 +44,15 @@ export default {
 <style lang="scss" scoped>
 .Introduction {
   padding-bottom: 100px;
+  box-sizing: border-box;
+  // padding: 0 20px 100px;
 }
 .contenter {
   margin: 0 auto;
   max-width: 700px;
   text-align: left;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 .main {
   padding-top: 85px;
