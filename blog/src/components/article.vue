@@ -82,7 +82,8 @@ export default {
   width: 100%;
 }
 .articleContenter {
-  width: 800px;
+  max-width: 800px;
+  // max-width: 100%;
   margin: 0 auto;
 }
 ul {
@@ -107,20 +108,12 @@ pre code {
   background-color: transparent;
   border: 0;
 }
-h1::before,
-h2::before,
-h3::before,
-h4::before,
-h5::before {
-  line-height: 24px;
-  font-size: 20px;
-  font-weight: bold;
-  content: "#";
-  color: #eb5055;
-}
+
 .main {
-  margin-top: 85px;
+  margin-top: 55px;
   width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
   .a_main {
     height: 100%;
     padding-top: 40px;
@@ -223,6 +216,7 @@ h5::before {
   // font: 14px/22px normal helvetica, sans-serif;
   font-size: 14px;
   width: 100%;
+  box-sizing: border-box;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 0;
@@ -232,11 +226,10 @@ h5::before {
   padding-bottom: 15px;
   border-left: 3px solid #ccc;
   background-color: #f1f1f1;
-  
 }
 .a_card /deep/ blockquote p {
   margin: 0;
-   font-size: 14px;
+  font-size: 14px;
   line-height: 24px;
 }
 .a_card /deep/ h3 {

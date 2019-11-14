@@ -36,6 +36,7 @@ export default {};
   line-height: 120px;
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   line-height: 20px;

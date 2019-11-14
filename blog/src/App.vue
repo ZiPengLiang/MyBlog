@@ -57,6 +57,7 @@ a {
 }
 .con {
   width: 1080px;
+  max-width: 100%;
   margin: 0 auto;
 }
 .headerTitle {

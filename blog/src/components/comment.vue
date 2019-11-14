@@ -234,12 +234,19 @@ export default {
   .noData {
     width: 100%;
     // height: 300px;
-    height:430px;
+    height: 430px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 26px;
     color: #515a6e;
+  }
+  @media (max-width: 1060px) {
+    .newest {
+      ul {
+        justify-content: center;
+      }
+    }
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="con">
+    <div class="con PCBox">
       <div class="name">ZPengBlog</div>
       <!-- <router-link to="/home" class="name">ZPengBlog</router-link> -->
       <nav>
@@ -22,6 +22,13 @@
           </li>
         </ul>
       </nav>
+    </div>
+    <div class="con MobileBox">
+      <div class="mobileTitle">ZPengBlog</div>
+      <div class="mobileMenus">
+        <i class="el-icon-menu"></i>
+        <div class='selectBox'></div>
+      </div>
     </div>
   </div>
 </template>
@@ -52,18 +59,18 @@ export default {
           index: 0
         },
         {
-          title: "小小分享",
+          title: "分享",
           name: "Share",
           index: 1
         },
 
         {
-          title: "友情链接",
+          title: "友链",
           name: "Links",
           index: 2
         },
         {
-          title: "关于我",
+          title: "关于",
           name: "aboutme",
           index: 3
         }
@@ -97,6 +104,7 @@ li {
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.17);
   .con {
     width: 1280px;
+    max-width: 100%;
     height: 80px;
     margin: 0 auto;
     line-height: 80px;
@@ -174,9 +182,36 @@ li {
       }
     }
   }
+  .MobileBox {
+    position: relative;
+    display: none;
+    .mobileTitle {
+      width: 100%;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .mobileMenus{
+      position: absolute;
+      width: 20px;
+      // height: 20px;
+      top: 0;
+      left: 20px;
+      .selectBox{
+
+      }
+    }
+  }
 }
 .active {
   color: red;
+}
+@media (max-width: 600px) {
+  .PCBox {
+    display: none;
+  }
+  .MobileBox {
+    display: block !important;
+  }
 }
 </style>
 
