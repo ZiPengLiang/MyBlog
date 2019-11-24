@@ -212,6 +212,9 @@ pre code {
 .a_card /deep/ p {
   margin-bottom: 16px;
 }
+.a_card /deep/ .hljs-comment {
+  color: orange;
+}
 .a_card /deep/ blockquote {
   // font: 14px/22px normal helvetica, sans-serif;
   font-size: 14px;
@@ -259,5 +262,20 @@ pre code {
 .a_card /deep/ .hljs {
   font-size: 16px;
   padding: 0.9em !important;
+  -ms-overflow-style: auto;
+  overflow-x: auto;
+}
+.a_card /deep/ .hljs::-webkit-scrollbar {
+  // width: 3px !important;
+  height: 8px !important;
+}
+.a_card /deep/ .hljs::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  // -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: orange;
+}
+.a_card /deep/ .hljs::-webkit-scrollbar-track {
+  border-radius: 0;
+  // background: orange;
 }
 </style>

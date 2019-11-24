@@ -196,8 +196,7 @@ li {
       // height: 20px;
       top: 0;
       left: 20px;
-      .selectBox {
-      }
+      
     }
   }
 }
