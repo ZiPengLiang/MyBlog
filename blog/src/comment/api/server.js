@@ -1,6 +1,4 @@
 let base = "http://101.132.180.67:3020"
-    // let base = 'http://localhost:3020'
-    // import axios from "axios";
 let axios = require('axios')
 const gl_ajax = requestData => {
     !requestData.catchStatus ? requestData.catchStatus = [] : "";

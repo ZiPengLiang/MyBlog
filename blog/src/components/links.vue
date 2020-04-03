@@ -15,7 +15,7 @@
                 <div class="lCard" v-for="(item,index) in fLink" :key="index">
                   <div class="b_iomg">
                     <img
-                      :src="item.imgurl?item.imgurl:'https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=ee323c6c71cf3bc7e855c5eae1309699/3801213fb80e7becdddcc3802e2eb9389b506b49.jpg'"
+                      v-lazy="item.imgurl?item.imgurl:'https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=ee323c6c71cf3bc7e855c5eae1309699/3801213fb80e7becdddcc3802e2eb9389b506b49.jpg'"
                       alt
                     />
                     <div class="blog_title">{{item.evaluate}}</div>
@@ -26,13 +26,13 @@
                 </div>
               </div>
             </div>
-            <div class="card" style="margin-top:50px" >
+            <div class="card" style="margin-top:50px" v-if="mLink.length">
               <h4>我的项目</h4>
               <div class="fLink">
                 <div class="lCard" v-for="(item,index) in mLink" :key="index">
                   <div class="b_iomg">
                     <img
-                      :src="item.imgurl?item.imgurl:'https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=ee323c6c71cf3bc7e855c5eae1309699/3801213fb80e7becdddcc3802e2eb9389b506b49.jpg'"
+                      v-lazy="item.imgurl?item.imgurl:'https://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=ee323c6c71cf3bc7e855c5eae1309699/3801213fb80e7becdddcc3802e2eb9389b506b49.jpg'"
                       alt
                     />
                     <div class="blog_title">{{item.evaluate}}</div>
@@ -129,7 +129,7 @@ header {
   width: 100%;
   height: 260px;
 }
-.linkBox{
+.linkBox {
   box-sizing: border-box;
   padding: 0 20px;
 }
