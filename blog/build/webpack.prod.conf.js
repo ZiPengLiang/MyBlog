@@ -70,8 +70,8 @@ const webpackConfig = merge(baseWebpackConfig, {
                 removeComments: true,
                 collapseWhitespace: true,
                 removeAttributeQuotes: true
-                    // more options:
-                    // https://github.com/kangax/html-minifier#options-quick-reference
+                // more options:
+                // https://github.com/kangax/html-minifier#options-quick-reference
             },
             // necessary to consistently work with multiple chunks via CommonsChunkPlugin
             chunksSortMode: 'dependency'
@@ -119,7 +119,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         new BundleAnalyzerPlugin({
             analyzerMode: 'server',
             analyzerHost: '127.0.0.1',
-            analyzerPort: 8888, // 运行后的端口号
+            analyzerPort: 9999, // 运行后的端口号
             reportFilename: 'report.html',
             defaultSizes: 'parsed',
             openAnalyzer: true,
