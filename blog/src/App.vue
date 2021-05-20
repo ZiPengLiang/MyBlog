@@ -16,13 +16,13 @@
 export default {
   name: "App",
   components: {
-    blogHeader: resolve => require(["@/components/blogHeader"], resolve),
-    foot: resolve => require(["@/components/footer"], resolve),
-    quick: resolve => require(["@/components/quick"], resolve)
+    blogHeader: (resolve) => require(["@/components/blogHeader"], resolve),
+    foot: (resolve) => require(["@/components/footer"], resolve),
+    quick: (resolve) => require(["@/components/quick"], resolve),
   },
   data() {
     return {};
-  }
+  },
 };
 </script>
 

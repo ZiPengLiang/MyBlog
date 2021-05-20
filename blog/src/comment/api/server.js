@@ -1,18 +1,15 @@
-let base = "http://101.132.180.67:3020"
-let axios = require('axios')
+import axios from './index'
+// let base = "http://localhost:3020"
+let base = 'http://www.mirenol.com:3020'
 const gl_ajax = requestData => {
     !requestData.catchStatus ? requestData.catchStatus = [] : "";
     requestData.senderr === undefined ? requestData.senderr = true : ""
     return axios({
-            method: requestData.method,
-            url: base + requestData.url,
-            // url: requestData.url,
-            headers: {
-                // 'Authorization': 'Bearer ' + sessionStorage.getItem('token')
-            },
-            data: requestData.method != "get" ? requestData.data : "",
-            params: requestData.method == "get" ? requestData.data : ""
-        })
+        method: requestData.method,
+        url: requestData.url,
+        data: requestData.method != "get" ? requestData.data : "",
+        params: requestData.method == "get" ? requestData.data : ""
+    })
         .then(res => {
             requestData.success ? requestData.success(res) : "";
 
