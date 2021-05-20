@@ -117,12 +117,12 @@ const webpackConfig = merge(baseWebpackConfig, {
             ignore: ['.*']
         }]),
         new BundleAnalyzerPlugin({
-            analyzerMode: 'server',
+            analyzerMode: 'disabled',
             analyzerHost: '127.0.0.1',
             analyzerPort: 9999, // 运行后的端口号
             reportFilename: 'report.html',
             defaultSizes: 'parsed',
-            openAnalyzer: true,
+            openAnalyzer: false,
             generateStatsFile: false,
             statsFilename: 'stats.json',
             statsOptions: null,
