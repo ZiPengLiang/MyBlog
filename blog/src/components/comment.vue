@@ -5,24 +5,28 @@
         <!-- 最新发布 -->
         <div class="newest">
           <ul class="new">
-            <li v-for="(item,index) in blogData" :key="index">
+            <li v-for="(item, index) in blogData" :key="index">
               <div class="n_img" @click="gotoArticle(item)">
-                <img v-lazy="base+'/'+item.base64" alt />
+                <img v-lazy="base + '/' + item.base64" alt />
               </div>
               <div class="n_article">
-                <p class="p_title" @click="gotoArticle(item)">{{item.title}}</p>
+                <p class="p_title" @click="gotoArticle(item)">
+                  {{ item.title }}
+                </p>
                 <p class="about">
                   <span>
                     <i class="el-icon-time"></i>
-                    {{getTime(item.date)}}
+                    {{ getTime(item.date) }}
                   </span>
                   <span>
                     <i class="el-icon-view"></i>
-                    {{item.watch}}
+                    {{ item.watch }}
                   </span>
                   <span>
                     <i class="el-icon-aim"></i>
-                    {{item.classification == 'summary'?'知识总结':'生活牢骚'}}
+                    {{
+                      item.classification == "summary" ? "知识总结" : "生活牢骚"
+                    }}
                   </span>
                 </p>
               </div>
@@ -33,7 +37,7 @@
           <el-pagination
             @current-change="handleCurrentChange"
             :current-page.sync="pageno"
-            :page-size="pagesize*1"
+            :page-size="pagesize * 1"
             layout="prev, pager, next, jumper"
             :total="count"
           ></el-pagination>
@@ -57,8 +61,8 @@ export default {
         console.log("data数据发生变化 ", this.data); //但是这两个值打印出来却都是一样的
         this.getData();
       },
-      deep: true
-    }
+      deep: true,
+    },
   },
   methods: {
     gotoArticle(item) {
@@ -66,25 +70,25 @@ export default {
       this.gl_ajax({
         method: "post",
         url: "/updata",
-        data: JSON.stringify({
+        data: {
           library: "blog",
           _id: item._id,
           data: {
-            watch: item.watch + 1
-          }
-        }),
-        success: function(res) {
+            watch: item.watch + 1,
+          },
+        },
+        success: function (res) {
           console.log(res);
           that.$router.push({
             name: "Article",
             query: {
-              id: item._id
-            }
+              id: item._id,
+            },
           });
         },
-        error: function(err) {
+        error: function (err) {
           console.log("err", err);
-        }
+        },
       });
     },
 
@@ -114,7 +118,7 @@ export default {
           pageno: that.pageno,
           pagesize: that.pagesize,
           data: JSON.stringify(that.data),
-          library: "blog"
+          library: "blog",
         },
         success(res) {
           that.loading = false;
@@ -124,9 +128,9 @@ export default {
           } else {
             that.blogData = null;
           }
-        }
+        },
       });
-    }
+    },
   },
   mounted() {
     // console.log("base", base);
@@ -140,9 +144,9 @@ export default {
       count: 1,
       loading: false,
       blogData: [],
-      base: ""
+      base: "",
     };
-  }
+  },
 };
 </script>
 <style lang="scss"  scoped>
